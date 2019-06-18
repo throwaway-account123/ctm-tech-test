@@ -29,6 +29,7 @@ RSpec.describe TransactionsController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) do
     {
+      merchant_id: Merchant.new(name: 'Amazon').id,
       description: 'My description'
     }
   end

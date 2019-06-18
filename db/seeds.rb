@@ -6,5 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Merchant.create(name: 'Uber')
-Merchant.create(name: 'Uber Eats')
+[
+  'Sainsburys',
+  'Uber',
+  'Uber Eats',
+  'Netflix',
+  'Amazon',
+  'Google',
+  'Amazon Prime',
+  'DVLA',
+  'Sky Digital',
+  'Sky'
+].map { |m| Merchant.create(name: m) }

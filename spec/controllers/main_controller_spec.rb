@@ -11,8 +11,9 @@ describe MainController, type: :controller do
     end
 
     it 'assigns transactions reverse chronologically' do
-      trans1 = Transaction.create(description: 'my transaction1')
-      trans2 = Transaction.create(description: 'my transaction2')
+      merch = Merchant.create(name: 'Uber')
+      trans1 = Transaction.create(description: 'my transaction1', merchant_id: merch.id)
+      trans2 = Transaction.create(description: 'my transaction2', merchant_id: merch.id)
       get :index
       expect(assigns(:transactions)).to eq [trans2, trans1]
       Transaction.destroy_all
