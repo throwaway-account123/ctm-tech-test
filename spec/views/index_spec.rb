@@ -23,7 +23,7 @@ feature 'Index page' do
   describe 'Transactions' do
     it 'displays transaction header' do
       visit root_path
-      expect(page).to have_content 'Transactions'
+      expect(page).to have_content 'Transactions (reverse chronologically)'
     end
 
     it 'displays no transactions message' do

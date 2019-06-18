@@ -5,6 +5,6 @@ class MainController < ApplicationController
   # GET '/'
   def index
     @transaction = Transaction.new
-    @transactions = Transaction.all
+    @transactions = Transaction.all.reverse
   end
 end
