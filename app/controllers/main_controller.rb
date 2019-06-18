@@ -3,5 +3,7 @@
 # Controller handling all the necessary methods for this small app
 class MainController < ApplicationController
   # GET '/'
-  def index; end
+  def index
+    @transaction = Transaction.new
+  end
 end

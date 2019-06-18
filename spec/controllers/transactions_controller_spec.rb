@@ -28,11 +28,15 @@ RSpec.describe TransactionsController, type: :controller do
   # Transaction. As you add validations to Transaction, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+    {
+      description: 'My description'
+    }
   end
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    {
+      description: nil
+    }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -79,9 +83,9 @@ RSpec.describe TransactionsController, type: :controller do
         end.to change(Transaction, :count).by(1)
       end
 
-      it 'redirects to the created transaction' do
+      it 'redirects to home page on create' do
         post :create, params: { transaction: valid_attributes }, session: valid_session
-        expect(response).to redirect_to(Transaction.last)
+        expect(response).to redirect_to(root_path)
       end
     end
 

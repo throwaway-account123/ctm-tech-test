@@ -3,10 +3,19 @@
 %hr
 %p Enter a transaction description and click 'Submit'
 
-= form_tag("/search", method: "get") do
-  = label_tag(:description, "Enter description:")
-  = text_field_tag(:description)
-  = submit_tag("Submit")
+= form_for @transaction do |f|
+  - if @transaction.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@transaction.errors.count, "error")} prohibited this transaction from being saved:"
+      %ul
+        - @transaction.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label 'Enter description:'
+    = f.text_field :description
+  .actions
+    = f.submit 'Submit'
 
 %hr
 
