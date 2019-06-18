@@ -8,7 +8,7 @@ Original problem spec can be found in `./docs`.
 
 ```bash
 bundle
-rails db:prepare
+rails db:setup
 rails s
 # Visit http://localhost:3000 and get going!
 ```
