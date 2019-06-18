@@ -6,6 +6,6 @@ require 'rails_helper'
 feature 'Index page' do
   scenario 'visit the index page' do
     visit root_path
-    expect(page).to have_content "Amazing Transaction Viewer by Bean"
+    expect(page).to have_content 'Amazing Transaction Viewer by Bean'
   end
 end
