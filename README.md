@@ -1,24 +1,21 @@
-# README
+# CTM-tech-test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Jeremy's solution to the CTM tech test.
 
-Things you may want to cover:
+Original problem spec can be found in `./docs`.
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+```bash
+bundle
+rails db:prepare
+rails s
+# Visit http://localhost:3000 and get going!
+```
 
-* Configuration
+## Development
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+rubocop # Code linting
+rspec # Run tests
+```
