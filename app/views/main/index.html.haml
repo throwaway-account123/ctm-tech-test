@@ -20,6 +20,8 @@
 %hr
 
 %h3 Transactions:
-- if @transactions
+- if @transactions.present?
+  - @transactions.each do |t|
+    %p= t.description
 - else
-%p No transactions.
+  %p No transactions.

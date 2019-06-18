@@ -9,5 +9,13 @@ describe MainController, type: :controller do
       expect(response.status).to be 200
       expect(assigns(:transaction).class).to eq Transaction
     end
+
+    it 'assigns transactions' do
+      trans1 = Transaction.create(description: 'my transaction1')
+      trans2 = Transaction.create(description: 'my transaction2')
+      get :index
+      expect(assigns(:transactions)).to eq [trans1, trans2]
+      Transaction.destroy_all
+    end
   end
 end
