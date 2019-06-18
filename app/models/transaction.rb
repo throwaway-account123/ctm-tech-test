@@ -12,10 +12,10 @@ class Transaction < ApplicationRecord
     # 'Uber Eats' takes priority over 'Uber'
     # 'Amazon Prime' > 'Amazon'
     merchants = Merchant
-      .all
-      .to_a
-      .select { |m| description.tr("'", '').downcase.include?(m.name.downcase) }
-      .sort { |m| m.name.length }
+                .all
+                .to_a
+                .select { |m| description.tr("'", '').downcase.include?(m.name.downcase) }
+                .sort { |m| m.name.length }
 
     # If no merchants were matched, create one instead
     merchants.present? ? merchants.first : Merchant.create(name: 'unknown')
