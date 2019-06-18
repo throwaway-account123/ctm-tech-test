@@ -1,1 +1,9 @@
 %h1 Amazing Transaction Viewer by Bean
+
+%hr
+%p Enter a transaction description and click 'Submit'
+
+= form_tag("/search", method: "get") do
+  = label_tag(:description, "Enter description:")
+  = text_field_tag(:description)
+  = submit_tag("Submit")
