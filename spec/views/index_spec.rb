@@ -19,4 +19,12 @@ feature 'Index page' do
     expect(page).to have_content 'Enter description:'
     expect(page).to have_button 'Submit'
   end
+
+  describe 'Transactions' do
+    it 'displays transaction header' do
+      visit root_path
+      expect(page).to have_content 'Transactions'
+      expect(page).to have_content 'No transactions.'
+    end
+  end
 end

@@ -7,3 +7,10 @@
   = label_tag(:description, "Enter description:")
   = text_field_tag(:description)
   = submit_tag("Submit")
+
+%hr
+
+%h3 Transactions:
+- if @transactions
+- else
+%p No transactions.
