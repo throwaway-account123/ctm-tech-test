@@ -22,6 +22,7 @@ class TransactionsController < ApplicationController
 
   # POST /transactions
   # POST /transactions.json
+  # rubocop:disable Metrics/MethodLength
   def create
     @transaction = Transaction.new(transaction_params)
     @transaction.merchant = @transaction.prepare_merchant
@@ -36,6 +37,7 @@ class TransactionsController < ApplicationController
       end
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   # PATCH/PUT /transactions/1
   # PATCH/PUT /transactions/1.json

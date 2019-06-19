@@ -4,6 +4,9 @@ AllCops:
   Exclude:
     - 'db/**/*'
 
+Metrics/AbcSize:
+  Max: 16
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
