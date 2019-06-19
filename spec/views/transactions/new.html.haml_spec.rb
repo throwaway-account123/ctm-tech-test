@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'transactions/new', type: :view do
   before(:each) do
     assign(:transaction, Transaction.new(
-                           description: 'MyString'
+                            merchant_id: Merchant.create(name: 'Uber').id,
+                            description: 'MyString'
                          ))
   end
 

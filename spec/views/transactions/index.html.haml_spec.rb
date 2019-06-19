@@ -4,9 +4,11 @@ RSpec.describe 'transactions/index', type: :view do
   before(:each) do
     assign(:transactions, [
              Transaction.create!(
+               merchant_id: Merchant.create(name: 'Uber').id,
                description: 'Description'
              ),
              Transaction.create!(
+               merchant_id: Merchant.create(name: 'Uber').id,
                description: 'Description'
              )
            ])

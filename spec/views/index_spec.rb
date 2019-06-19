@@ -32,23 +32,27 @@ feature 'Index page' do
     end
 
     it 'displays transaction descriptions' do
-      Transaction.create(description: 'my new transaction')
+      merch = Merchant.create(name: 'Uber')
+      Transaction.create(description: 'my new transaction', merchant_id: merch.id)
       visit root_path
       expect(page).to have_content 'my new transaction'
       expect(page).not_to have_content 'No transactions'
       Transaction.destroy_all
+      Merchant.destroy_all
     end
 
     it 'displays multiple transaction descriptions' do
-      Transaction.create(description: 'my new transaction')
-      Transaction.create(description: 'my new transaction2')
-      Transaction.create(description: 'my new transaction3')
+      merch = Merchant.create(name: 'Uber')
+      Transaction.create(description: 'my new transaction', merchant_id: merch.id)
+      Transaction.create(description: 'my new transaction2', merchant_id: merch.id)
+      Transaction.create(description: 'my new transaction3', merchant_id: merch.id)
       visit root_path
       expect(page).to have_content 'my new transaction'
       expect(page).to have_content 'my new transaction2'
       expect(page).to have_content 'my new transaction3'
       expect(page).not_to have_content 'No transactions'
       Transaction.destroy_all
+      Merchant.destroy_all
     end
   end
 end
